@@ -1,0 +1,59 @@
+.root {
+    --flow-footer-height: 5.5rem;
+    position: relative;
+}
+
+.heading {
+    background-color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    grid-column-end: span 2;
+    line-height: 1rem;
+    padding: 1.5rem 0 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 1;
+}
+
+.body {
+    animation-duration: 224ms;
+    animation-iteration-count: 1;
+    animation-name: enter;
+    background-color: white;
+    bottom: var(--flow-footer-height);
+    box-shadow: 0 -1px rgb(var(--venia-border));
+    display: grid;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.footer {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    grid-auto-columns: min-content;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    height: var(--flow-footer-height);
+    justify-items: center;
+    justify-content: center;
+    margin: 0 1.5rem;
+    padding: 1.5rem 0 1rem;
+    position: relative;
+}
+.footer div{
+    margin-left: 10px;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

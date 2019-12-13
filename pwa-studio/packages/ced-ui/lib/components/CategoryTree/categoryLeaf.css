@@ -1,0 +1,19 @@
+.root {
+}
+
+.target {
+    display: flex;
+    height: 3.5rem;
+    padding: 0 1.25rem;
+    width: 100%;
+}
+
+.text {
+    align-items: center;
+    border-bottom: 1px solid rgb(var(--venia-border));
+    display: flex;
+    flex: auto;
+    height: 3.5rem;
+    padding: 0 0.25rem;
+    color: #252525;
+}

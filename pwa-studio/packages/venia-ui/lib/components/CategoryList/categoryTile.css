@@ -1,0 +1,26 @@
+.root {
+    display: block;
+    line-height: 1rem;
+    text-align: center;
+    width: 6rem;
+}
+
+.imageContainer {
+    margin: 0 0.5rem 1rem 0.5rem;
+}
+
+.image {
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(var(--venia-border));
+    display: block;
+    height: 5rem;
+    object-fit: cover;
+}
+
+.image_empty {
+    composes: image;
+}
+
+.name {
+    display: block;
+}

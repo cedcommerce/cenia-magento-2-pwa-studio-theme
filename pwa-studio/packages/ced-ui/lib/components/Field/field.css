@@ -1,0 +1,49 @@
+.root {
+    color: rgb(var(--venia-text));
+    display: grid;
+}
+
+.label {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 1rem;
+    font-weight: normal;
+    padding: 0.375rem 0.125rem;
+    color: #252525;
+    margin-bottom: 0px;
+    text-shadow: 0px 0px 0px;
+}
+.input {
+    background: white;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    color: rgb(var(--venia-text));
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 15px;
+    height: 40px;
+    margin: 0;
+    padding: 7px 15px;
+    width: 100%;
+    font-family: roboto;
+    -webkit-appearance: none;
+    font-weight: 500;
+}
+
+.input:focus {
+    border-color: none;
+    box-shadow: 0 0 0 2px rgb(var(--venia-teal-light)),
+        0 0 0.5rem 2px rgba(var(--venia-teal), 0.2);
+    outline: none;
+}
+
+.requiredSymbol {
+}
+.requiredSymbol::before {
+    content: '*';
+    color: #e40606;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 5px;
+}

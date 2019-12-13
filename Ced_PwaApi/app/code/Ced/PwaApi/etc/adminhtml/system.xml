@@ -1,0 +1,89 @@
+<!--
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement (EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category    Ced
+ * @package     Ced_CsMarketplace
+ * @author      CedCommerce Core Team <connect@cedcommerce.com>
+ * @copyright   Copyright CedCommerce (http://cedcommerce.com/)
+ * @license      http://cedcommerce.com/license-agreement.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="cedpwa" sortOrder="1">
+            <label>CED PWA</label>
+        </tab>
+        <section id="ced_pwa" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+            <tab>cedpwa</tab>
+            <label>Configuration</label>
+            <resource>Ced_PwaApi::ced_pwa</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General</label>
+                <field id="show_home_slider" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Slider on Home Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+                <field id="show_trending" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Trending Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_latest" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Latest Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_category_banner" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Category Banner</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="categories_banner_block" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Categories Banner Block</label>
+                    <source_model>Ced\PwaApi\Model\System\Config\Source\BlockList</source_model>
+                    <depends>
+                        <field id="show_category_banner">1</field>
+                    </depends>
+                </field>
+                <field id="show_offer_banner" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Offer Banner</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+                <field id="offer_banner_block" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Offer Banner Block</label>
+                    <source_model>Ced\PwaApi\Model\System\Config\Source\BlockList</source_model>
+                    <depends>
+                        <field id="show_offer_banner">1</field>
+                    </depends>
+                </field>
+                <field id="show_category_icon" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Category Icons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                 <field id="categories_icon_block" translate="label" type="select" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Category Icons Block</label>
+                    <source_model>Ced\PwaApi\Model\System\Config\Source\BlockList</source_model>
+                    <depends>
+                        <field id="show_category_icon">1</field>
+                    </depends>
+                </field>
+                <field id="footer_block" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Footer Block</label>
+                    <source_model>Ced\PwaApi\Model\System\Config\Source\BlockList</source_model>
+                </field>
+            </group>
+            <group id="extensions_license" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Extensions License</label>
+                <frontend_model>Ced\PwaApi\Block\Extensions</frontend_model>  
+            </group>
+        </section>
+    </system>
+</config>

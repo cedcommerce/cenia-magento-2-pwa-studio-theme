@@ -1,0 +1,139 @@
+<?php
+$html = $block->getLayoutHtml();
+$formKey = $this->helper('Ced\Custom\Helper\Data')->getFormKey();
+ ?>
+<form method="post" action="<?php echo $this->getUrl('pwaapi/home/save'); ?>">
+	<input  type="hidden" name="form_key" value="<?php echo $formKey ?>"/>
+	<input  type="hidden" id="position" name="position" value="0"/>
+	<div class="page-main-actions">
+		<div class="page-actions-placeholder"></div>
+		<div class="page-actions">
+			<div class="page-actions-inner">
+				<div class="page-actions-buttons">
+			        <button id="add-section" title="Add Items" type="button" class="action-default scalable secondary">
+				    	<span><?= __("Add Items"); ?></span>
+					</button>
+					<button title="Save" type="submit" class="action-default scalable primary">
+				    	<span><?= __("Save"); ?></span>
+					</button>
+   			 	</div>
+			</div>
+		</div>
+	</div>
+	<div class = "home-layout-container">
+		<div class="selected-section">
+			<?php if($html){ 
+				echo $html;
+			} ?>
+		</div>
+		<div class="section-type">
+		</div>
+	</div>
+	<div class="slider-popup">
+	</div>
+</form>
+
+
+
+<script type="text/javascript">
+	    require([
+        'jquery'
+    ], function($){
+    	$("body").on('change','#product-list-type',function(){
+    		var position = parseInt($("#position").val());
+    		if($("#product-list-type").val()=="category"){
+    			$(".selected-section").append('<div><div class="admin__field commission_type"><label class="label admin__field-label"><strong>Category Product</strong></label></div><div class="admin__field miscellaneous_commission"><table class="admin__control-table"><thead><tr><th>Number of Products</th><th>Text</th><th>Url</th></tr></thead><tbody class="productlisting"><tr><td><input value="" class="admin__control-text" type="text" name="categorylist-num-'+position+'"></td><td><input value="" class="admin__control-text" type="text" name="categorylist-text-'+position+'"></td><td><input value="" class="admin__control-text" type="text" name="categorylist-url-'+position+'"></td></tr></tbody></table></div></div>');
+    				$(".slider-popup").empty();
+    				$(".section-type").empty();
+    		}else{
+    			if($("#product-list-type").val()=="reviewed"){
+    				listingName = "Most Reviewed";
+    			}else if($("#product-list-type").val()=="deal"){
+    				listingName = "Deal Product";
+    			}
+    			var type = $("#product-list-type").val();
+    			$(".selected-section").append('<div><div class="admin__field commission_type"><label class="label admin__field-label"><strong>'+listingName+'</strong></label></div><div class="admin__field miscellaneous_commission"><table class="admin__control-table"><thead><tr><th>Number of Products</th><th>Text</th></tr></thead><tbody class="productlisting"><tr><td><input value="" class="admin__control-text" type="text" name="'+type+'-num-'+position+'"></td><td><input value="" class="admin__control-text" type="text" name="'+type+'-text-'+position+'"></td></tr></tbody></table></div></div>');
+    				$(".slider-popup").empty();
+    				$(".section-type").empty();
+    		}
+    	});
+
+    	$("#add-section").on('click',function(){
+    		$(".section-type").empty();
+    		$(".section-type").append('<select name="section-type" id="section-type" class="admin__control-select"><option value="">Select Type</option><option value="banner">Banner</option><option value="slider">Slider</option><option value="category">Category</option><option value="product">Product List</option></select>');
+    	});
+
+    	$("body").on('change','#section-type',function(){
+    		var position = parseInt($("#position").val());
+    		var formKey = "<?= $formKey ?>";
+    		if($("#section-type").val()){
+    			if($("#section-type").val()=="product"){
+    				$(".slider-popup").append('<select name="product-list-type" id="product-list-type" class="admin__control-select"><option value="">Select Type</option><option value="deal">Deal Product</option><option value="reviewed">Most Reviewed</option><option value="category">Category Product</option></select>');
+    			}else{
+    				$.ajax({
+	                    url: "<?php echo $block->getUrl('pwaapi/home/sliders');?>",
+	                    type: 'POST',
+	                    data: {type: $('#section-type').val(),form_key:formKey,position: $('#position').val() },
+	                    dataType: 'json',
+	                    success: function (data) {
+	                       if($("#section-type").val()=="category"){
+	                       	$(".selected-section").append(data);	
+	                       }else{
+	                       	$(".slider-popup").append(data);	
+	                       }
+	                       $("#section-type").hide();
+	                    }
+                	});
+    			}
+    		}
+    		$("#position").val(position+1);
+    	});
+
+    	$("body").on('click','.list-slider',function(){
+    		var position = parseInt($("#position").val());
+    		var slide = $(this).attr('id');
+    		var lableName = "Section";
+    		var key = "slider";
+    		if(slide.indexOf('slider') != -1){
+			    lableName = "Slider";
+			    key = "slider";
+
+			}
+			if(slide.indexOf('banner') != -1){
+			    lableName = "Banner";
+			    key = "banner";
+			}
+			value = slide.split('-');
+    		$(".selected-section").append('<label class="label admin__field-label"><strong>'+lableName+'</strong></label><input type="text" class="admin__control-text" value="'+value[1]+'" name="'+key+'-id-'+position+'" />');
+    		$(".slider-popup").empty();
+    	});
+    });
+
+</script>
+
+<script>
+require(["jquery"], function ($) {
+$('#commission_type').on('change', function(){
+		if($('#commission_type').val() =="miscellaneous"){
+			$('.commision_fee').hide();
+			$('.miscellaneous_commission').show();
+			
+	    }
+		else{
+			  $('.commision_fee').show();
+			  $('.miscellaneous_commission').hide();
+			}
+
+});
+$('body').on('click','.addoption',function(){
+	var position = $(this).attr('id').substring(10);
+	var categoryList = '<?= $block->getCategoryHtml(); ?>';
+	var html = '<tr><td><select class="admin__control-select" name="category-name-'+position+'[]">'+categoryList+'</select></td><td><input class="admin__control-text" type="text" name="category-text-'+position+'[]"></td><td><input value="" class="admin__control-text" type="text" name="category-img-'+position+'[]"></td><td><input value="" class="admin__control-text" type="text" name="category-url-'+position+'[]"></td><td><button onclick="deleterow(this)" class="action-delete" type="button"><span>Delete</span></button></td></tr>';
+	$('#addRow').append(html);
+});	  
+});
+function deleterow(id){
+	 jQuery(id).closest('tr').remove();
+	
+}
+</script>

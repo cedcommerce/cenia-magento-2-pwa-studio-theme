@@ -1,0 +1,18 @@
+title: Tutorials
+entries:
+    - label: Overview
+      url: /tutorials/
+
+    - label: Magento Cloud deployment
+      url: /tutorials/cloud-deploy/
+
+    - label: Hello UPWARD
+      entries:
+          - label: Creating a simple server
+            url: /tutorials/hello-upward/simple-server/
+
+          - label: Using the TemplateResolver
+            url: /tutorials/hello-upward/using-template-resolver/
+
+          - label: Adding React
+            url: /tutorials/hello-upward/adding-react/

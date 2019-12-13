@@ -1,0 +1,30 @@
+.root {
+    border: 1px solid rgb(var(--venia-text));
+    border-radius: 5px;
+    height: 23px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    min-width: 23px;
+    font-size: 11px;
+    padding: 0 0.5rem;
+}
+
+@media (min-width: 1024px) {
+    .root {
+        height: 23px;
+        min-width: 23px;
+        padding: 0;
+    }
+}
+
+.root_selected {
+    composes: root;
+    background-color: rgb(var(--venia-text));
+    color: white;
+}
+.root_focused {
+    composes: root;
+}
+.root_selected_focused {
+    composes: root_selected;
+}

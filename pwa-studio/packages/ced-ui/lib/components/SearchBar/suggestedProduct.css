@@ -1,0 +1,22 @@
+.root {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-template-columns: 60px 1fr;
+}
+
+.image {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    height: 75px;
+    max-height: 75px;
+}
+
+.name {
+    word-break: break-word;
+}

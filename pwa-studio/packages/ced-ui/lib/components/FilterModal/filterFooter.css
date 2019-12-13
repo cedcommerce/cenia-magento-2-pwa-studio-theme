@@ -1,0 +1,35 @@
+.root {
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem;
+    border-top: 2px solid rgb(var(--venia-border));
+}
+.root button {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 9rem;
+    border: 1px solid var(--ced-orange-color-theme);
+    border-radius: 100px;
+    color: var(--ced-orange-color-theme);
+    outline: none;
+}
+.root button:nth-child(2) {
+    color: white;
+    background-color: var(--ced-orange-color-theme);
+}
+.root button[disabled='']:nth-child(1) {
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    color: #d1d1d1;
+}
+.root button[disabled='']:nth-child(2) {
+    color: white;
+    background-color: #d1d1d1;
+    border: 0;
+}

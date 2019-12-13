@@ -1,0 +1,8 @@
+query getSliderDetails {
+    homeSlider {
+        allSlides {
+            url
+            image
+        }
+    }
+}

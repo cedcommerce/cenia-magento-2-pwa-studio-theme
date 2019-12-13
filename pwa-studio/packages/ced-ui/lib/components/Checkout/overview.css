@@ -1,0 +1,110 @@
+.loader_case_wrapp {
+    position: relative;
+
+    width: 100%;
+}
+.modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ced-orange-color-theme);
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+}
+.modal.modal_active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+    margin-left: 0px !important;
+}
+
+.loader_div {
+    width: 100%;
+    box-sizing: border-box;
+    display: table;
+    height: 100%;
+    margin-left: 0px !important;
+}
+.ball_pulse {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 5px;
+}
+
+@-webkit-keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    45% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        opacity: 0.7;
+    }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    45% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        opacity: 0.7;
+    }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.ball_pulse > div:nth-child(1) {
+    -webkit-animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+    animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.ball_pulse > div:nth-child(2) {
+    -webkit-animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+    animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.ball_pulse > div:nth-child(3) {
+    -webkit-animation: scale 0.75s 0s infinite
+        cubic-bezier(0.2, 0.68, 0.18, 1.08);
+    animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.ball_pulse > div {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+}
+@media screen and (min-width: 320px) and (max-width: 330px){
+    div.modal.modal_active,
+    div.loader_div {
+        margin-left: 0px !important;
+    }
+}

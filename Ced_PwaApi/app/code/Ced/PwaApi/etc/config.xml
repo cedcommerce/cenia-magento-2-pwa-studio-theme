@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<default>
+ <ced_pwa>
+ 	<general>
+ 		<show_home_slider>1</show_home_slider>
+ 		<show_trending>1</show_trending>
+ 		<show_latest>1</show_latest>
+ 		<show_category_banner>1</show_category_banner>
+ 		<categories_banner_block>category_banner</categories_banner_block>
+ 		<show_offer_banner>1</show_offer_banner>
+ 		<offer_banner_block>offer_banner</offer_banner_block>
+ 		<show_category_icon>1</show_category_icon>
+ 		<categories_icon_block>category_icons</categories_icon_block>
+ 		<footer_block>ced-pwa-footer</footer_block>
+ 	</general>
+ </ced_pwa>
+ <system>
+    <license>
+		<use_https>0</use_https>
+		<license_url>csmarketplace/main/license</license_url>
+		<activate_url>cedcommerce.com/licensing/validate/</activate_url>
+		<validate_url>cedcommerce.com/licensing/validate/auto</validate_url>
+	</license>
+ </system>
+</default>
+</config>

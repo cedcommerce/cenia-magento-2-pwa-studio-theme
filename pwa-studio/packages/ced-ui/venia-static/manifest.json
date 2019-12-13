@@ -1,0 +1,26 @@
+{
+    "name": "Cedcommerce Pwa Demo",
+    "short_name": "Cedcommerce Pwa Demo",
+    "start_url": "/",
+    "theme_color": "#ff6334",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Cedcommerce Pwa Demo",
+    "icons": [
+        {
+            "src": "/venia-static/icons/144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/venia-static/icons/192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/venia-static/icons/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

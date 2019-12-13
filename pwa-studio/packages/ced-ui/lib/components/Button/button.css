@@ -1,0 +1,72 @@
+.root {
+    background: none;
+    border: 1px solid var(--ced-orange-color-theme);
+    border-radius: 5px;
+    color: rgb(var(--color));
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    padding: 15px;
+    transition-duration: 384ms;
+    transition-property: background-color, color;
+    transition-timing-function: var(--venia-anim-standard);
+    --color: var(--venia-text);
+}
+
+.filled {
+    background-color: var(--ced-orange-color-theme);
+    color: white;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+}
+.filled:hover {
+    background-color: var(--ced-text-hover-theme);
+    border-color: var(--ced-text-hover-theme);
+}
+
+.root:hover {
+    --color: var(--venia-teal);
+}
+.root:focus {
+    box-shadow: 0 0 0 2px rgb(var(--venia-teal-light)),
+        0 0 0.5rem 2px rgba(var(--venia-teal), 0.2);
+    outline: none;
+    transition-duration: 128ms;
+    --color: var(--venia-teal);
+}
+
+.root:active {
+    transition-duration: 128ms;
+    --color: var(--venia-teal-dark);
+}
+
+.root:disabled {
+    pointer-events: none;
+    --color: var(--venia-grey-dark);
+}
+
+.content {
+    align-items: center;
+    display: inline-grid;
+    gap: 0.5rem;
+    grid-auto-flow: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+/* derived classes */
+
+.root_normalPriority {
+    composes: root;
+}
+.root_highPriority {
+    composes: root filled;
+}
+@media screen and (min-width: 320px) and (max-width: 330px){
+    .root {
+        padding: 11px;
+    }
+}

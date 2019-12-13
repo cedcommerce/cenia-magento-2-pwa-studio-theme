@@ -1,0 +1,17 @@
+.root {
+    color: rgb(var(--venia-text));
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1rem;
+    padding: 5px 0px 0px;
+    margin-bottom: 0;
+}
+
+.root:empty {
+    display: none;
+}
+
+.root_error {
+    composes: root;
+    color: #e40606;
+}

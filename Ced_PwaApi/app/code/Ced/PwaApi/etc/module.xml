@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    <module name="Ced_PwaApi" setup_version="0.0.3" release_version="0.0.1" >
+       <sequence>
+            <module name="Magento_Search"/>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Customer"/>
+            <module name="Magento_Wishlist"/>
+            <module name="Magento_Sales"/>
+      </sequence>
+    </module>
+</config>

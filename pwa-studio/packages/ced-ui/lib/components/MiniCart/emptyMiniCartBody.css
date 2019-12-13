@@ -1,0 +1,29 @@
+.root {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.emptyTitle {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.continue {
+    composes: root from '../Button/button.css';
+    color: white;
+    background-color: var(--ced-orange-color-theme);
+}
+
+.continue:hover {
+    color: white;
+    background-color: var(--ced-text-hover-theme);
+}
+.empty_cart_img img {
+    width: 130px;
+}

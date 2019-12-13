@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement (EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category    Ced
+ * @package     Ced_PincodeChecker
+ * @author      CedCommerce Core Team <connect@cedcommerce.com>
+ * @copyright   Copyright CedCommerce (http://cedcommerce.com/)
+ * @license     http://cedcommerce.com/license-agreement.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Ced_PwaApi::pwaapi" title="PWA" module="Ced_PwaApi" sortOrder="16" resource="Ced_PwaApi::pwaapi"/>
+        <add id="Ced_PwaApi::manage_slider" title="Manage Slider" module="Ced_PwaApi" sortOrder="10" parent="Ced_PwaApi::pwaapi" resource="Ced_PwaApi::pwaapi" />
+        <add id="Ced_PwaApi::manageslider" title="Manage Slider" module="Ced_PwaApi" sortOrder="10" parent="Ced_PwaApi::manage_slider" action="pwaapi/slider/index" resource="Ced_PwaApi::manageslider"/>
+        <add id="Ced_PwaApi::pwaapi_configuration" title="Configuration" module="Ced_PwaApi" sortOrder="11" parent="Ced_PwaApi::manage_slider" action="adminhtml/system_config/edit/section/ced_pwa" resource="Ced_PwaApi::manageslider"/>
+    </menu>
+</config>

@@ -1,0 +1,91 @@
+.subscription_wrapper {
+    position: relative;
+    top: 55px;
+}
+.newsLetter_heading {
+    text-align: center;
+    padding: 30px 0px;
+}
+.newsLetter_heading h3 {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--ced-text-heading-theme);
+}
+.newsLetter_heading p {
+    margin-bottom: 0px;
+    color: var(--ced-text-color-theme);
+    padding-top: 5px;
+}
+.input_group > div > p {
+    position: absolute;
+    bottom: 0;
+}
+.success {
+    position: absolute;
+    bottom: 0;
+    color: #1d4d1d;
+    font-size: 13px;
+    line-height: 1;
+}
+.input_group input {
+    position: relative;
+    margin: 0px auto;
+    height: 67px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(181, 166, 166, 0.29);
+    border-radius: 50px;
+    margin: 0 auto;
+    border: 1px solid #fff;
+}
+.input_group {
+    max-width: 650px;
+    width: 95%;
+    margin: 0px auto;
+    position: relative;
+    padding-bottom: 25px;
+}
+.input_group_append button {
+    background-color: var(--ced-orange-color-theme);
+    border: 1px solid var(--ced-orange-color-theme);
+    padding: 5px 25px;
+    width: 215px;
+    height: 55px;
+    border-radius: 50px;
+    position: absolute;
+    right: 7px;
+    top: 18px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.footer_form_btn {
+}
+
+.filled {
+    background-color: var(--ced-orange-color-theme);
+    color: white;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+}
+.filled:hover {
+    background-color: var(--ced-text-hover-theme);
+    border-color: var(--ced-text-hover-theme);
+}
+
+@media only screen and (max-width: 767px) {
+    .input_group input {
+        max-width: 650px;
+        position: relative;
+        margin: 0px auto;
+        height: 56px;
+    }
+    .input_group_append button {
+        width: 134px;
+        height: 44px;
+    }
+    .newsLetter_heading {
+        padding: 5px 0px;
+    }
+}

@@ -1,0 +1,24 @@
+<!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+{% for entry in site.data.top-nav %}
+  {% if entry.children %}
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span href="#" data-proofer-ignore tabindex="-1">{{entry.label}}</span>
+    <div class="nav-popup">
+      <ul>
+        {% for subsection in entry.children %}
+        <li role="menuitem">
+          <a href="{{site.baseurl}}{{subsection.url}}">{{subsection.label}}</a>
+        </li> 
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+
+  {% else %}
+  <li class="menuitem {% if page.url contains entry.url %}current{% endif %}">
+      <a href="{{site.baseurl}}{{entry.url}}">{{entry.label}}</a>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>

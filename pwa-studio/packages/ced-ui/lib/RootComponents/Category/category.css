@@ -1,0 +1,62 @@
+.root {
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0 0.5rem;
+}
+
+.pagination {
+    position: sticky;
+    bottom: 0;
+}
+
+.placeholder {
+    height: 100vh;
+}
+
+.headerButtons {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.filterButton {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 9rem;
+    border: 1px solid black;
+    border-radius: 100px;
+    color: black;
+    outline: none;
+}
+.filter_icon {
+    margin-right: 5px;
+}
+
+.categoryTitle {
+    color: rgb(var(--venia-text));
+    padding-bottom: 1.5rem;
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 1.375rem;
+}
+.heading_filter {
+    display: flex;
+    padding: 20px 0px;
+    align-items: baseline;
+}
+.heading_filter .title {
+    flex: auto;
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .root,
+    .title {
+        padding: 0;
+    }
+}

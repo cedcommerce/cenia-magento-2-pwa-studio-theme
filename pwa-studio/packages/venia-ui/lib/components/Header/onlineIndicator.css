@@ -1,0 +1,8 @@
+.root {
+    align-items: center;
+    display: flex;
+    grid-area: primary;
+    height: 3rem;
+    margin-left: 4.5rem;
+    width: 3rem;
+}

@@ -1,0 +1,17 @@
+.root {
+    font-size: 0.875rem;
+    line-height: 28px;
+}
+
+.root p {
+    margin: 0 0 1rem;
+    color: #7d6767;
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.root ul {
+    list-style-type: disc;
+    margin: 0 0 1rem;
+    padding-left: 2.5rem;
+}

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement (EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category    Ced
+ * @package     Ced_CsAdvTransaction
+ * @author   	 CedCommerce Core Team <connect@cedcommerce.com >
+ * @copyright   Copyright CEDCOMMERCE (http://cedcommerce.com/)
+ * @license      http://cedcommerce.com/license-agreement.txt
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/Ui/etc/ui_configuration.xsd">
+<argument name="data" xsi:type="array">
+     <item name="js_config" xsi:type="array">
+         <item name="provider" xsi:type="string">slider_form.slider_form_data_source</item>
+         <item name="deps" xsi:type="string">slider_form.slider_form_data_source</item>
+     </item>
+     <item name="label" xsi:type="string" translate="true">Slider Information</item>
+        <item name="layout" xsi:type="array">
+            <item name="type" xsi:type="string">tabs</item>
+            <item name="navContainerName" xsi:type="string">left</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">save</item>
+                <item name="label" xsi:type="string" translate="true">Save</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="style" xsi:type="string">display:block</item>
+                <item name="url" xsi:type="string">pwaapi/slider/save</item>
+            </item>
+             <item name="back" xsi:type="array">
+                <item name="name" xsi:type="string">back</item>
+                <item name="label" xsi:type="string" translate="true">Back</item>
+                <item name="class" xsi:type="string">action-secondary</item>
+                <item name="style" xsi:type="string">display:block</item>
+                <item name="url" xsi:type="string">pwaapi/slider/index</item>
+            </item>
+        
+        </item>
+</argument>
+ 
+<dataSource name="slider_form_data_provider">
+     <argument name="dataProvider" xsi:type="configurableObject">
+         <argument name="class" xsi:type="string">Ced\PwaApi\Ui\SliderFormDataProvider</argument>
+         <argument name="name" xsi:type="string">slider_form_data_source</argument>
+         <argument name="primaryFieldName" xsi:type="string">id</argument>
+         <argument name="requestFieldName" xsi:type="string">id</argument>
+          <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/save"/>
+                    <item name="validate_url" xsi:type="url" path="*/*/validate"/> 
+                </item>
+            </argument>
+     </argument>
+     <argument name="data" xsi:type="array">
+         <item name="js_config" xsi:type="array">
+             <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+         </item>
+     </argument>
+</dataSource>
+ 
+<fieldset name="slider_fieldset">
+     <argument name="data" xsi:type="array">
+         <item name="config" xsi:type="array">
+             <item name="label" xsi:type="string" translate="true">Slider Details</item>
+         </item>
+         
+     </argument>
+ 
+     <!-- This field represents form id and is hidden -->
+     <field name="id">
+         <argument name="data" xsi:type="array">
+             <item name="config" xsi:type="array">
+                 <item name="visible" xsi:type="boolean">false</item>
+                 <item name="dataType" xsi:type="string">text</item>
+                 <item name="formElement" xsi:type="string">input</item>
+                 <item name="source" xsi:type="string">sliderform</item>
+             </item>
+         </argument>
+     </field>
+    <field name="slider_name">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Slider Name</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">sliderform</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+    <field name="code">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Code</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">sliderform</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+    <field name="url">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">URL</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">sliderform</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">false</item>
+                </item>
+                <item name="notice" xsi:type="string" translate="true">Enter multiple url separated with commas</item>
+            </item>
+        </argument>
+    </field>
+    <field name="type">
+        <argument name="data" xsi:type="array">
+            <item name="options" xsi:type="object">Ced\PwaApi\Model\Home\SliderType\Options</item>
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Type</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">select</item>
+                <item name="source" xsi:type="string">sliderform</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">false</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+    <field name="content">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="source" xsi:type="string">slider_form_data_provider</item>
+                <item name="label" xsi:type="string" translate="true">Image of Slider</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="formElement" xsi:type="string">fileUploader</item>
+                <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                <item name="isMultipleFiles" xsi:type="boolean">true</item>
+                <item name="dataScope" xsi:type="string">image</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="url" path="pwaapi/slider/upload"/>
+                </item>
+            </item>
+        </argument>
+    </field>
+
+</fieldset>
+ </form>

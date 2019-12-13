@@ -1,0 +1,13 @@
+query getLatestProducts {
+    latestProducts {
+        data {
+            name
+            price
+            final_price
+            sku
+            image
+            description
+            urlkey
+        }
+    }
+}

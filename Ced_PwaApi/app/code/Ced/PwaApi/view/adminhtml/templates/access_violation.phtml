@@ -1,0 +1,68 @@
+<?php
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement (EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category    Ced
+ * @package     Ced_PincodeChecker
+ * @author      CedCommerce Core Team <connect@cedcommerce.com>
+ * @copyright   Copyright CedCommerce (http://cedcommerce.com/)
+ * @license     http://cedcommerce.com/license-agreement.txt
+ */
+
+?>
+
+<div id="popup-mpdal">
+    <?php
+        $args = $block->getModules();
+?>
+<h1 class="page-heading">
+    <?php echo __('Invalid License') ?>
+</h1>
+<?php if(strlen($args) > 0) { ?>
+    <p><?php echo __('For Following Module(s):')?> <?php echo $args; ?></p>
+<?php } ?>
+<p><?php echo __('In order to use these module(s) you have to '); ?>
+<a id="activate" href="<?php echo $this->getUrl('adminhtml/system_config/edit/section/cedcore/'); ?>" title="<?php echo __('Activate'); ?>"><?php echo __('Activate'); ?></a>
+<?php echo __(' these module(s) before use.') ?></p>
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: '',
+                buttons: [{
+                    text: $.mage.__('Activate'),
+                    class: '',
+                    click: function () {
+                        /*this.closeModal();*/
+                        window.location='<?php echo $this->getUrl('adminhtml/system_config/edit/section/cedcore/'); ?>';
+                     
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#popup-mpdal'));
+
+            $('#popup-mpdal').modal('openModal');
+        }
+    );
+</script>
+
+

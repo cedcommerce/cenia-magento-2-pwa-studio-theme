@@ -1,0 +1,8 @@
+query getHomepageConfig {
+    homepageConfig {
+        configData {
+            name
+            value
+        }
+    }
+}
