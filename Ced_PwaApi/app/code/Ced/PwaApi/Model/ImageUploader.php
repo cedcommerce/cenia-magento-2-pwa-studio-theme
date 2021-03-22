@@ -17,12 +17,12 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
         $this->uploaderFactory = $uploaderFactory;
         $this->storeManager = $storeManager;
         $this->logger = $logger;
-        $this->baseTmpPath = "slider/tmp";
-        $this->basePath = "slider";
+        $this->baseTmpPath = "pwa-theme/slider/tmp";
+        $this->basePath = "pwa-theme/slider";
         $this->allowedExtensions= ['jpg', 'jpeg', 'gif', 'png'];
     }
 
-    public function moveFileFromTmp($imageName)
+    public function moveFileFromTmp($imageName, $returnRelativePath = false)
     {
         $baseTmpPath = $this->getBaseTmpPath();
         $basePath = $this->getBasePath();
@@ -38,7 +38,6 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
                 $baseImagePath
             );
         } catch (\Exception $e) {
-            die($e);
             throw new \Magento\Framework\Exception\LocalizedException(
                 __('Something went wrong while saving the file(s).')
             );
