@@ -80,10 +80,6 @@
                     <source_model>Ced\PwaApi\Model\System\Config\Source\BlockList</source_model>
                 </field>
             </group>
-            <group id="extensions_license" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
-                <label>Extensions License</label>
-                <frontend_model>Ced\PwaApi\Block\Extensions</frontend_model>  
-            </group>
         </section>
     </system>
 </config>

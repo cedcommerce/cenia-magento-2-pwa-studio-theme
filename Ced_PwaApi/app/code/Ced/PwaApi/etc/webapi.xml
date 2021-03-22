@@ -15,12 +15,4 @@
 			<resource ref="anonymous" />
 		</resources>
 	</route>
-	<route url="/V1/wishlist/remove" method="POST">
-		<service class="Ced\PwaApi\Api\WishlistInterface"
-			method="remove" />
-		<resources>
-			<resource ref="anonymous" />
-		</resources>
-	</route>
-	
 </routes>

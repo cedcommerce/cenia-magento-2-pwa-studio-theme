@@ -19,7 +19,7 @@ import $ from 'jquery';
 import Logo from '../Logo';
 import Icon from '../Icon';
 import MenuIcon from 'react-feather/dist/icons/menu';
-import { Link, resourceUrl, Route, Redirect } from '@magento/venia-drivers';
+import { Link, resourceUrl, Route } from '@magento/venia-drivers';
 
 import CartTrigger from './cartTrigger';
 import NavTrigger from './navTrigger';
@@ -46,27 +46,14 @@ const Header = props => {
     });
 
     const { HomeConfigData } = homepageData;
-   
-    let licenseValidate = "";
+    console.log(HomeConfigData);
     let supportEmail = "";
     if(typeof HomeConfigData != "undefined" ){
         for (var i = 0; i < HomeConfigData.length; i++) {
             if (HomeConfigData[i]['name'] == 'email')
-               supportEmail = HomeConfigData[i]['value'];
-            if (HomeConfigData[i]['name'] == 'license'){
-                licenseValidate = HomeConfigData[i]['value'];
-            }
-               
+               supportEmail = HomeConfigData[i]['value'];    
         }
     } 
-    
-    if(licenseValidate !=""){
-        localStorage.setItem('ced_license',licenseValidate);
-    }
-
-    if(licenseValidate == "novalue"){
-        return <Redirect to="/unauthorized" />;
-    }
   
     if (typeof navdetails != "undefined" && navdetails) {
         const elements = JSON.parse(navdetails).categories;
@@ -179,10 +166,9 @@ const Header = props => {
         }
         
     }
-   
-    if(licenseValidate) {
+
     return (
-        <header id="header" className={defaultClasses.main_header}>
+        <header className={defaultClasses.main_header}>
             {/* section-upper-header  */}
             <div className={defaultClasses.section_header_top}>
                 <div className="container">
@@ -372,9 +358,6 @@ const Header = props => {
             </div>
         </header>
     );
-    } else{
-        return "";
-    }
 };
 
 Header.propTypes = {

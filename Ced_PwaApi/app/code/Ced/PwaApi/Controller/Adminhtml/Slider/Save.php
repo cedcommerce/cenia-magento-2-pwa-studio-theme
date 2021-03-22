@@ -21,7 +21,7 @@ class Save extends \Magento\Backend\App\Action
     public function execute()
     {
         $image = $this->_request->getParam('slider_fieldset');
-       
+
         $filePath = [];
         if(isset($image['image'])){
             foreach($image['image'] as $tmpImg){
@@ -48,10 +48,8 @@ class Save extends \Magento\Backend\App\Action
                 $this->pwaslider->setType($image['type']);
                 $this->pwaslider->save();
             }
-            $this->messageManager->addSuccessMessage(__("Details saved Successfully."));
-        }else{
-            $this->messageManager->addErrorMessage(__("Please select image for Slider."));
         }
+        $this->messageManager->addSuccessMessage(__("Details saved Successfully."));
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('pwaapi/slider/index');
         return $resultRedirect;
