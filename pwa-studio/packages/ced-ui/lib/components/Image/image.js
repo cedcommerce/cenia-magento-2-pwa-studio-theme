@@ -66,7 +66,7 @@ const Image = props => {
 
     const classes = mergeClasses(defaultClasses, propsClasses);
     const containerClass = `${classes.root} ${classes.container}`;
-    const isLoadedClass = isLoaded ? classes.loaded : classes.notLoaded;
+    const isLoadedClass = (isLoaded || src) ? classes.loaded : classes.notLoaded;
     const imageClass = `${classes.image} ${isLoadedClass}`;
 
     // If we have a src, use it directly. If not, assume this is a resource image.
