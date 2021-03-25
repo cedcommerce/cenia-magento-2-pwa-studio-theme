@@ -1,0 +1,12 @@
+query storeConfig {
+  storeConfig {
+    product_url_suffix
+    category_url_suffix
+    welcome
+    base_currency_code
+    default_display_currency_code
+    locale
+    code
+    id
+  }
+}

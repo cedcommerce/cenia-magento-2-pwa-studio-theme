@@ -2,7 +2,8 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GET_HOMEPAGECONFIG_DATA from '@magento/ced-ui/lib/queries/getHomeConfig.graphql';
-import { useHome } from '@magento/peregrine/lib/talons/Home/useHome';
+import SCOPE_CONFIG_DATA from '@magento/ced-ui/lib/queries/getScopeConfigData.graphql';
+import { useHome, useScopeData } from '@magento/peregrine/lib/talons/Home/useHome';
 import Button from '../Button';
 import {
     faBaseballBall,
@@ -32,6 +33,7 @@ import { mergeClasses } from '../../classify';
 import defaultClasses from './header.css';
 import SearchBar from '../SearchBar';
 import MobileLogo from '../MobileLogo';
+import { Util } from '@magento/peregrine';
 
 const Header = props => {
     const { handleSignOut,isSignedIn } = useHeader();
@@ -46,7 +48,16 @@ const Header = props => {
     });
 
     const { HomeConfigData } = homepageData;
-    console.log(HomeConfigData);
+    const scopeConfigData = useScopeData({
+        query: SCOPE_CONFIG_DATA
+      });
+  const { scopeData } = scopeConfigData;
+  const { BrowserPersistence } = Util;
+  const storage = new BrowserPersistence();
+  if (!storage.getItem('scope_data') && scopeData) {
+    storage.setItem('scope_data', scopeData);
+  }
+
     let supportEmail = "";
     if(typeof HomeConfigData != "undefined" ){
         for (var i = 0; i < HomeConfigData.length; i++) {

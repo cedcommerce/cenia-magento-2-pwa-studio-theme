@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useCedContext } from '@magento/peregrine/lib/context/ced';
+import { Util } from '../..';
 /**
  *
  * @param {*} props.query the footer data query
@@ -16,6 +17,30 @@ export const useHome = props => {
 
     return {
         HomeConfigData: data && data.homepageConfig.configData
+    };
+};
+export const useGetScopeCache = () => {
+    const { BrowserPersistence } = Util;
+    const storage = new BrowserPersistence();
+    const scopeData = storage.getItem('scope_data');
+    return {
+        config: scopeData
+    };
+};
+export const useScopeData = props => {
+    const { query } = props;
+    const { error, data } = useQuery(query, {
+        fetchPolicy: 'cache-first',
+        errorPolicy: 'all'
+    });
+    useEffect(() => {
+        if (error) {
+            console.log(error);
+        }
+    }, [error]);
+
+    return {
+        scopeData: data && data.storeConfig
     };
 };
 

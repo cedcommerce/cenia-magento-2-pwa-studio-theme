@@ -9,7 +9,8 @@ import {
     useLatestProducts,
     useCatIcons,
     useCatBanners,
-    useOfferBanners
+    useOfferBanners,
+    useGetScopeCache
 } from '@magento/peregrine/lib/talons/Home/useHome';
 import GET_SLIDER_DATA from '@magento/ced-ui/lib/queries/getSliderDetails.graphql';
 
@@ -41,6 +42,7 @@ const Home = props => {
             items: 4
         }
     };
+  const { config } = useGetScopeCache();
 
     const bestSellerDatas = useBestSeller({
         tquery: GET_BESTSELLER_DATA
@@ -168,7 +170,7 @@ const Home = props => {
                                                 className={ClassDetails}
                                             >
                                                 <Link
-                                                    to={resourceUrl(url)}
+                                                    to={resourceUrl(url+config.product_url_suffix)}
                                                 >
                                                     <img
                                                         className={'img-fluid'}
@@ -307,7 +309,7 @@ const Home = props => {
                                                                                     to={resourceUrl(
                                                                                         value[
                                                                                             'urlkey'
-                                                                                        ]
+                                                                                        ]+config.product_url_suffix
                                                                                     )}
                                                                                 >
                                                                                     <img
@@ -333,7 +335,7 @@ const Home = props => {
                                                                                         to={resourceUrl(
                                                                                             value[
                                                                                                 'urlkey'
-                                                                                            ]
+                                                                                            ]+config.product_url_suffix
                                                                                         )}
                                                                                     >
                                                                                         {
@@ -496,7 +498,7 @@ const Home = props => {
                                                                                     to={resourceUrl(
                                                                                         value[
                                                                                             'urlkey'
-                                                                                        ]
+                                                                                        ]+config.product_url_suffix
                                                                                     )}
                                                                                 >
                                                                                     <img
@@ -522,7 +524,7 @@ const Home = props => {
                                                                                         to={resourceUrl(
                                                                                             value[
                                                                                                 'urlkey'
-                                                                                            ]
+                                                                                            ]+config.product_url_suffix
                                                                                         )}
                                                                                     >
                                                                                         {
