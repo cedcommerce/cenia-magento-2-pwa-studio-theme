@@ -48,7 +48,8 @@ const AddressForm = props => {
     let showRegionId = false;
     let selectableCountries = [];
     let selectableState = [];
-    if (typeof countries != 'undefined' && countries.length) {
+    
+    if (typeof countries != 'undefined' &&  countries !=null && countries.length) {
         {
             countries.map((value, index) => {
                 selectableCountries[index] = {
