@@ -15,13 +15,5 @@
  		<footer_block>ced-pwa-footer</footer_block>
  	</general>
  </ced_pwa>
- <system>
-    <license>
-		<use_https>0</use_https>
-		<license_url>csmarketplace/main/license</license_url>
-		<activate_url>cedcommerce.com/licensing/validate/</activate_url>
-		<validate_url>cedcommerce.com/licensing/validate/auto</validate_url>
-	</license>
- </system>
 </default>
 </config>

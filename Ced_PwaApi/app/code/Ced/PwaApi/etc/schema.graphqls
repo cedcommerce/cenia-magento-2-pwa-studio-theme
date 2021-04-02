@@ -22,43 +22,7 @@ type Query {
 
     customerOrders: CustomerOrders @resolver(class: "Ced\\PwaApi\\Model\\Resolver\\Orders") @doc(description: "List of customer orders") @cache(cacheable: false)
 
-    CustomerOrderList (
-        customer_id: Int @doc(description: "Id of the Customer")
-    ): SalesOrder @resolver(class: "Ced\\PwaApi\\Model\\Resolver\\CustomerOrder") @doc(description: "The Sales Order query returns information about a customer placed order")
-
-    productReviews: ProductReviews @resolver(class: "Ced\\PwaApi\\Model\\Resolver\\ProductReviews") @doc(description: "List of customer reviews") @cache(cacheable: false)
-    
 	}
-
-type SalesOrder @doc(description: "Sales Order graphql gather data of order item information") {
-fetchRecords : [CustomerOrderRecord] @doc(description: "An array of customer placed order fetch records")
-}
- 
-type CustomerOrderRecord @doc(description: "Customer placed order items information") {
-    id: Int
-    increment_id: String
-    created_at: String
-    grand_total: String
-    status: String
-    currency :String
-    ship_to: String
-}
-
-type ProductReviews @doc(description: "Reviews mapping fields") {
-    data: [ProductReviewsData] @doc(description: "Reviews mapping fields")
-}
-
-type ProductReviewsData @doc(description: "Reviews mapping fields") {
-    created_at: String
-    review: String
-    review_id: String
-    product_name: String
-    product_img : String
-    rating: String
-    detail: String
-    url_key: String
-}
-
 type CustomerOrder @doc(description: "Order mapping fields") {
     id: Int
     increment_id: String

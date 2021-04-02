@@ -22,7 +22,7 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
         $this->allowedExtensions= ['jpg', 'jpeg', 'gif', 'png'];
     }
 
-    public function moveFileFromTmp($imageName)
+    public function moveFileFromTmp($imageName, $returnRelativePath = false)
     {
         $baseTmpPath = $this->getBaseTmpPath();
         $basePath = $this->getBasePath();

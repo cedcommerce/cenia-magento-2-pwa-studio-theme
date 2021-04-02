@@ -80,7 +80,7 @@ class BestSeller implements ResolverInterface
             $products['data'][$i]['sku'] = $product->getSku();
             $products['data'][$i]['image'] = $image;
             $products['data'][$i]['description'] = $description;
-            $products['data'][$i]['urlkey'] = $product->getUrlKey().".html";
+            $products['data'][$i]['urlkey'] = $product->getUrlKey();
             $i++;
         }
        

@@ -50,21 +50,19 @@ class Orders extends \Magento\SalesGraphQl\Model\Resolver\Orders
 
         $items = [];
         $orders = $this->collectionFactory->create($context->getUserId());
+
         /** @var \Magento\Sales\Model\Order $order */
-        if($context->getUserId() != 0){
-            foreach ($orders as $order) {
-                $items[] = [
-                    'id' => $order->getId(),
-                    'increment_id' => $order->getIncrementId(),
-                    'created_at' => $order->getCreatedAt(),
-                    'grand_total' => $order->getGrandTotal(),
-                    'status' => $order->getStatus(),
-                    'currency' => $order->getOrderCurrencyCode(),
-                    'ship_to' => $order->getShippingAddress()->getName()
-                ];
-            }
+        foreach ($orders as $order) {
+            $items[] = [
+                'id' => $order->getId(),
+                'increment_id' => $order->getIncrementId(),
+                'created_at' => $order->getCreatedAt(),
+                'grand_total' => $order->getGrandTotal(),
+                'status' => $order->getStatus(),
+                'currency' => $order->getOrderCurrencyCode(),
+                'ship_to' => $order->getShippingAddress()->getName()
+            ];
         }
-        
         return ['items' => $items];
     }
 }

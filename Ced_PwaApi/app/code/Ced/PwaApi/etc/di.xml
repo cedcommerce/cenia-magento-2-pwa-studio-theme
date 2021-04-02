@@ -1,9 +1,4 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
       <preference for="Ced\PwaApi\Api\HomePageInterface" type="Ced\PwaApi\Model\Api\HomePage" />
-     <preference for="Ced\PwaApi\Api\WishlistInterface" type="Ced\PwaApi\Model\Api\Wishlist" />
-     <preference for="Ced\PwaApi\Api\Data\WishlistInterface" type="Ced\PwaApi\Model\Api\WishlistData" />
-      <type name="Magento\Config\Model\Config\Structure">
-            <plugin name="ced-pwaapi-extend-system-xml" type="Ced\PwaApi\Plugin\Model\Config\Structure"/>
-      </type>
 </config>

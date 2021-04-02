@@ -67,13 +67,6 @@ class HomepageConfig implements ResolverInterface
         $data['configData'][9]['value'] = $this->_scopeConfig->getValue('ced_pwa/general/footer_block'); 
         $data['configData'][10]['name'] = "email"; 
         $data['configData'][10]['value'] = $this->_scopeConfig->getValue('trans_email/ident_general/email');
-        $data['configData'][11]['name'] = "license"; 
-        if(!$this->_scopeConfig->getValue('ced_pwa/extensions/extension_magento2_ced_pwaapi')){
-             $data['configData'][11]['value'] = "novalue";
-        }else{
-             $data['configData'][11]['value']= $this->_scopeConfig->getValue('ced_pwa/extensions/extension_magento2_ced_pwaapi'); 
-        }
-         
         return $data;
        
     }
