@@ -46,3 +46,18 @@ Now Run the following command
 `yarn run build`
 
 `yarn run stage:ced`
+
+# Learn more
+
+Checkout Pro version of Cenia PWA
+https://cedcommerce.com/magento-pwa-studio-theme 
+
+Demo: https://ceniapro.demo.cedcommerce.com/
+
+Watch Cenia Demo 
+
+[![Cenia Demo](https://img.youtube.com/vi/XP9fiyR2byU/0.jpg)](https://www.youtube.com/watch?v=XP9fiyR2byU)
+
+
+
+
