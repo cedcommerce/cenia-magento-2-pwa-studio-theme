@@ -2,13 +2,12 @@
 
 We’re happy to share with you our Magento PWA Theme! i.e. Created by our CedCommerce Team, based on PWA Studio Tools and Practices.
 
-![Magento 2 PWA Studio CENIA THEME By CEDCOMMERCE](https://docs.cedcommerce.com/wp-content/uploads/2019/11/section-img-768x281.png)
+![Magento 2 PWA Studio CENIA THEME By CEDCOMMERCE](https://user-images.githubusercontent.com/25526037/123958530-ccf28880-d9ca-11eb-9896-fa4ad7f4d772.png)
+
 
 ## Useful links
 
 [Pwa Studio Installation Guide](https://cedcommerce.com/blog/install-magento-pwa-studio/)
-
-[Theme Installation Guide](https://docs.cedcommerce.com/magento-2/pwa-studio-theme-magneto-2/)
 
 ## Installation and Licensing
 
@@ -46,3 +45,26 @@ Now Run the following command
 `yarn run build`
 
 `yarn run stage:ced`
+
+## Already have an existing Magento Marketplace store? Checkout Pro version of Cenia PWA 
+Page Link: https://cedcommerce.com/magento-pwa-studio-theme
+
+Grab more. Work less. Connect with our experts in just a click https://calendly.com/shikhamishra/15min
+
+# Learn more
+
+Webinar https://www.youtube.com/results?search_query=PWA+cedcommerce+webinar
+
+Cenia PWA documentation	https://docs.cedcommerce.com/magento-2/cenia-pro-theme-user-guide/
+
+Twitter link	https://twitter.com/cedcommerce
+
+Demo: https://ceniapro.demo.cedcommerce.com/
+
+Watch Cenia Demo 
+
+[![Cenia Demo](https://img.youtube.com/vi/XP9fiyR2byU/0.jpg)](https://www.youtube.com/watch?v=XP9fiyR2byU)
+
+
+
+
