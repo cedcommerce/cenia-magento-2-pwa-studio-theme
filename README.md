@@ -46,17 +46,24 @@ Now Run the following command
 
 `yarn run stage:ced`
 
+## Already have an existing Magento Marketplace store? Checkout Pro version of Cenia PWA 
+https://cedcommerce.com/magento-pwa-studio-theme
+
 # Learn more
 
-Checkout Pro version of Cenia PWA
-https://cedcommerce.com/magento-pwa-studio-theme 
+webinar https://www.youtube.com/results?search_query=PWA+cedcommerce+webinar
+
+Cenia PWA documentation	https://docs.cedcommerce.com/magento-2/cenia-pro-theme-user-guide/
+
+Installation blog	https://cedcommerce.com/blog/install-magento-pwa-studio/
+
+Twitter link	https://twitter.com/cedcommerce
 
 Demo: https://ceniapro.demo.cedcommerce.com/
 
 Watch Cenia Demo 
 
 [![Cenia Demo](https://img.youtube.com/vi/XP9fiyR2byU/0.jpg)](https://www.youtube.com/watch?v=XP9fiyR2byU)
-
 
 
 
