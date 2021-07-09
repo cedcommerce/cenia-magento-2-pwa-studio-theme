@@ -51,7 +51,7 @@ https://cedcommerce.com/magento-pwa-studio-theme
 
 # Learn more
 
-webinar https://www.youtube.com/results?search_query=PWA+cedcommerce+webinar
+Webinar https://www.youtube.com/results?search_query=PWA+cedcommerce+webinar
 
 Cenia PWA documentation	https://docs.cedcommerce.com/magento-2/cenia-pro-theme-user-guide/
 
