@@ -57,8 +57,6 @@ Webinar https://www.youtube.com/results?search_query=PWA+cedcommerce+webinar
 
 Cenia PWA documentation	https://docs.cedcommerce.com/magento-2/cenia-pro-theme-user-guide/
 
-Installation blog	https://cedcommerce.com/blog/install-magento-pwa-studio/
-
 Twitter link	https://twitter.com/cedcommerce
 
 Demo: https://ceniapro.demo.cedcommerce.com/
