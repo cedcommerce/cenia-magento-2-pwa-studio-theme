@@ -19,7 +19,7 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
         $this->logger = $logger;
         $this->baseTmpPath = "pwa-theme/slider/tmp";
         $this->basePath = "pwa-theme/slider";
-        $this->allowedExtensions= ['jpg', 'jpeg', 'gif', 'png'];
+        $this->allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
     }
 
     public function moveFileFromTmp($imageName, $returnRelativePath = false)
@@ -61,10 +61,10 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
         $result['tmp_name'] = str_replace('\\', '/', $result['tmp_name']);
         $result['path'] = str_replace('\\', '/', $result['path']);
         $result['url'] = $this->storeManager
-                ->getStore()
-                ->getBaseUrl(
-                    \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-                ) . $this->getFilePath($baseTmpPath, $result['file']);
+            ->getStore()
+            ->getBaseUrl(
+                \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
+            ) . $this->getFilePath($baseTmpPath, $result['file']);
         $result['name'] = $result['file'];
         if (isset($result['file'])) {
             try {
